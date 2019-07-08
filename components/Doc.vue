@@ -1,8 +1,17 @@
 <template>
-  <div class="document wysiwyg">
-    <h1> {{ doc.title }} </h1>
-    <div class="lead" v-if="doc.summary" v-html="doc.summary"> </div>
-    <dimer-tree :node="doc.content" />
+  <div class="document">
+    <div class="wysiwyg">
+      <h1> {{ doc.title }} </h1>
+      <div class="lead" v-if="doc.summary" v-html="doc.summary"> </div>
+      <dimer-tree :node="doc.content" />
+    </div>
+
+    <footer class="doc-footer">
+      <p>
+          Caught a mistake or want to contribute to the documentation?
+          <a :href="doc.gh_link" target="_blank">Edit this page on GitHub!</a>
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -32,7 +41,10 @@
   .document {
     max-width: 770px;
     width: 100%;
-    padding: 6rem 10rem 6rem 0;
+  }
+
+  .wysiwyg {
+    padding: 6rem 10rem 0 0;
   }
 
   .fancy-label {
@@ -257,5 +269,16 @@
 
   .wysiwyg table tr:nth-of-type(2n) {
     background-color: var(--grey-100);
+  }
+
+  .doc-footer {
+    padding: 3rem 0 4rem 0;
+    margin-top: 70px;
+    border-top: 1px solid var(--grey-100);
+    font-size: 1.3rem;
+  }
+
+  .doc-footer a {
+    color: var(--links-color);
   }
 </style>
