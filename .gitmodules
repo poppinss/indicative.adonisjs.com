@@ -1,0 +1,3 @@
+[submodule "indicative-rules"]
+	path = indicative-rules
+	url = git@github.com:poppinss/indicative-rules.git

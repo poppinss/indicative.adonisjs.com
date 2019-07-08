@@ -1,0 +1,24 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently 'dimer serve' 'nuxt' -n 'dimer,nuxt'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@dimerapp/cli": "^1.0.12",
+    "concurrently": "^4.1.1",
+    "nuxt": "^2.8.1"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/router": "^1.3.2",
+    "dimer-vue": "^3.0.2",
+    "nuxt-env": "^0.1.0",
+    "vue-client-only": "^2.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "domain": "",
+  "cname": "",
+  "zones": {
+    "guides": {
+      "name": "Guides",
+      "versions": {
+        "master": "docs/guides"
+      }
+    },
+    "validations": {
+      "name": "Validation rules",
+      "versions": {
+        "master": "indicative-rules/docs/validations"
+      }
+    },
+    "sanitizations": {
+      "name": "Sanitization rules",
+      "versions": {
+        "master": "indicative-rules/docs/sanitizations"
+      }
+    }
+  },
+  "websiteOptions": {},
+  "compilerOptions": {
+    "apiUrl": "http://localhost:5000",
+    "detectAssets": true,
+    "createSearchIndex": true,
+    "extensions": ["extensions/casts.js"]
+  }
+}
