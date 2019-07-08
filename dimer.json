@@ -1,6 +1,4 @@
 {
-  "domain": "",
-  "cname": "",
   "zones": {
     "guides": {
       "name": "Guides",
@@ -25,7 +23,7 @@
   "compilerOptions": {
     "apiUrl": "http://localhost:5000",
     "detectAssets": true,
-    "createSearchIndex": true,
-    "extensions": ["extensions/casts.js"]
+    "createSearchIndex": false,
+    "extensions": ["extensions/casts.js", "extensions/addGhLink.js"]
   }
 }

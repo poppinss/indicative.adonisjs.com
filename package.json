@@ -1,14 +1,15 @@
 {
-  "name": "site",
+  "name": "indicative-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "The source code for indicative website",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently 'dimer serve' 'nuxt' -n 'dimer,nuxt'"
+    "dev": "concurrently 'dimer serve' 'nuxt' -n 'dimer,nuxt'",
+    "start": "DIMER_BASE_URL=indicative.adonisjs.com NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@dimerapp/cli": "^1.0.12",
     "concurrently": "^4.1.1",
@@ -17,7 +18,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/router": "^1.3.2",
-    "dimer-vue": "^3.0.2",
+    "dimer-vue": "^3.0.3",
     "nuxt-env": "^0.1.0",
     "vue-client-only": "^2.0.0"
   }

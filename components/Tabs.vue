@@ -54,7 +54,6 @@
   .tabs-head {
     display: flex;
     background: hsl(202, 32%, 20%);
-    color: hsl(202, 32%, 90%);
     border-radius: 6px 6px 0 0;
     font-family: var(--pre-font);
     font-size: 1.4rem;

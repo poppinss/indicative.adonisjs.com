@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   modules: [
     '@nuxtjs/axios',
     [
@@ -13,7 +13,7 @@ export default {
         keys: [
           {
             key: 'DIMER_BASE_URL',
-            default: 'http://10.181.5.152:5000'
+            default: 'http://192.168.1.7:5000'
           },
           {
             key: 'NODE_ENV',

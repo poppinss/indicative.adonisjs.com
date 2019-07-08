@@ -7,6 +7,10 @@ import DocComponent from '~/components/Doc'
 
 Vue.use(Router)
 
+DocComponent.pageOptions = {
+  scrollToTop: true,
+}
+
 export function createRouter (ssrContext, createDefaultRouter) {
   const defaultRouter = createDefaultRouter(ssrContext)
 

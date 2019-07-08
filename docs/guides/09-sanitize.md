@@ -5,7 +5,6 @@ category: API
 
 # sanitize
 
-
 The `sanitize` method performs sanitization rules on a given data object.
 
 ```ts
