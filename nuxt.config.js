@@ -13,7 +13,7 @@ module.exports = {
         keys: [
           {
             key: 'DIMER_BASE_URL',
-            default: 'http://192.168.1.7:5000'
+            default: 'http://localhost:5000'
           },
           {
             key: 'NODE_ENV',
