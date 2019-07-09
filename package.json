@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently 'dimer serve' 'nuxt' -n 'dimer,nuxt'",
-    "start": "DIMER_BASE_URL=indicative.adonisjs.com NODE_ENV=production node server.js"
+    "start": "DIMER_BASE_URL=indicative.adonisjs.com NODE_ENV=production node server.js",
+    "build": "dimer build & nuxt build"
   },
   "keywords": [],
   "author": "",
