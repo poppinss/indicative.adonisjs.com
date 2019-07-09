@@ -1,10 +1,15 @@
 <template>
-  <div class="site-header-wrapper">
+  <div class="site-header-wrapper" :class="{ expanded }">
     <header class="site-header">
       <div class="container">
         <div class="header-container">
-          <header-logo />
-          <header-nav />
+          <div class="logo-wrapper">
+            <header-logo />
+            <hamburger :expanded="expanded" @onHamburgerClick="expanded = !expanded" />
+          </div>
+          <div class="nav-wrapper">
+            <header-nav />
+          </div>
         </div>
       </div>
     </header>
@@ -14,31 +19,63 @@
 <script>
   import HeaderNav from '~/components/Nav'
   import HeaderLogo from '~/components/Logo'
+  import Hamburger from '~/components/Hamburger'
 
   export default {
-    components: { HeaderNav, HeaderLogo },
+    components: { HeaderNav, HeaderLogo, Hamburger },
+    data () {
+      return {
+        expanded: false,
+      }
+    }
   }
 </script>
 
 <style>
   .site-header-wrapper {
     height: var(--header-height);
+    background-color: var(--primary-color);
+    transition: height 200ms ease;
   }
 
   .site-header {
     background-color: var(--primary-color);
     position: fixed;
-    z-index: 100;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
   }
 
   .header-container {
     height: var(--header-height);
-    align-items: center;
-    justify-content: space-between;
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 200ms ease;
+  }
+
+  .logo-wrapper {
+    height: var(--header-height);
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .site-header-wrapper.expanded, .site-header-wrapper.expanded .header-container {
+    height: 300px;
+  }
+
+  .site-header-wrapper.expanded .header-container {
+    overflow: scroll;
+  }
+
+  @media (min-width: 1024px) {
+    .header-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 </style>

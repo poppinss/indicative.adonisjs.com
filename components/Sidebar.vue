@@ -1,10 +1,10 @@
 <template>
-  <div class="docs-nav">
+  <div class="docs-nav" :class="{ expanded }">
     <div class="docs-nav-container">
       <nav>
-        <ul v-for="node in tree">
+        <ul v-for="node in tree" :key="node.category">
           <h4> {{ node.category }} </h4>
-          <li v-for="doc in node.docs">
+          <li v-for="doc in node.docs" :key="doc.permalink">
             <nuxt-link :to="doc.permalink">
               {{ doc.title }}
             </nuxt-link>
@@ -17,13 +17,12 @@
 
 <script>
   export default {
-    props: ['tree'],
+    props: ['tree', 'expanded'],
   }
 </script>
 
 <style>
   .docs-nav {
-    width: var(--sidebar-width);
     flex-shrink: 0;
   }
 
@@ -31,10 +30,17 @@
     background: var(--sidebar-background);
     position: fixed;
     bottom: 0;
-    top: var(--header-height);
+    right: 0;
+    top: 0;
     margin-right: -999px;
     padding-right: 999px;
-    border-left: 1px solid rgba(0, 0, 0, .02);
+    transform: translateX(80vw);
+    transition: transform 200ms ease;
+    z-index: 4;
+  }
+
+  .expanded .docs-nav-container {
+    transform: none;
   }
 
   .docs-nav-container ul {
@@ -42,10 +48,10 @@
   }
 
   .docs-nav-container nav {
-    border-right: 1px solid rgba(0, 0, 0, .05);
-    width: var(--sidebar-width);
+    width: 75vw;
     padding: 0 3rem 4rem 3rem;
     height: 100%;
+    -webkit-overflow-scrolling: touch;
     overflow: scroll;
   }
 
@@ -66,5 +72,23 @@
 
   .docs-nav-container li a.nuxt-link-active {
     color: var(--links-color);
+  }
+
+  @media (min-width: 1024px) {
+    .docs-nav-container {
+      transform: none;
+      right: auto;
+      border-left: 1px solid rgba(0, 0, 0, .02);
+      top: calc(var(--header-height));
+    }
+
+    .docs-nav-container nav {
+      width: var(--sidebar-width);
+      border-right: 1px solid rgba(0, 0, 0, .05);
+    }
+
+    .docs-nav {
+      width: var(--sidebar-width);
+    }
   }
 </style>

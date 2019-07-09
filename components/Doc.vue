@@ -8,8 +8,8 @@
 
     <footer class="doc-footer">
       <p>
-          Caught a mistake or want to contribute to the documentation?
-          <a :href="doc.gh_link" target="_blank">Edit this page on GitHub!</a>
+        Caught a mistake or want to contribute to the documentation?
+        <a :href="doc.gh_link" target="_blank">Edit this page on GitHub!</a>
       </p>
     </footer>
   </div>
@@ -44,7 +44,7 @@
   }
 
   .wysiwyg {
-    padding: 6rem 10rem 0 0;
+    padding-top: 2rem;
   }
 
   .fancy-label {
@@ -112,15 +112,6 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
     font-size: 2.3rem;
-  }
-
-  .wysiwyg h2 .icon-link:before {
-    content: '#';
-    color: #bbb;
-    left: -30px;
-    top: -3px;
-    text-decoration: none;
-    position: absolute;
   }
 
   .wysiwyg h3 {
@@ -280,5 +271,20 @@
 
   .doc-footer a {
     color: var(--links-color);
+  }
+
+  @media (min-width: 1024px) {
+    .wysiwyg {
+      padding: 6rem 10rem 0 0;
+    }
+
+    .wysiwyg h2 .icon-link:before {
+      content: '#';
+      color: #bbb;
+      left: -30px;
+      top: -3px;
+      text-decoration: none;
+      position: absolute;
+    }
   }
 </style>
