@@ -1,7 +1,7 @@
 ---
 permalink: validator-101
 category: Guides
-summary: <p>In this guide, we will explore the capibilities of Indicative to validate nested <strong>objects</strong> and <strong>arrays</strong>, along with the option to remove invalidated properties from the data object.</p>
+summary: <p>In this guide, we will explore the capibilities of Indicative to validate nested <strong>objects</strong> and <strong>arrays</strong>, along with the option to remove unvalidated properties from the data object.</p>
 ---
 
 # Validator 101
@@ -29,7 +29,7 @@ validate(data, schema)
 
 - The terms like `required`, `alpha` are the pre-defined validation rules. You can also define your own rules for custom needs.
 - A field can be validated against multiple rules and Indicative will execute them in sequence from left to right.
-- If validation for a field fails, then Indicative will stop validations chain. However, the `validateAll` method can be used to prevent this behavior.
+- If validation for a field fails, then Indicative will stop the validations chain. However, the `validateAll` method can be used to prevent this behavior.
 
 ## Validating nested objects
 The aim of Indicative is to keep the schema object **simple** and **readable** even when you are validating nested properties. We achieve this using `dot notation` to target nested properties inside an object.

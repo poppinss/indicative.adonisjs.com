@@ -2,7 +2,7 @@
 category: Guides
 permalink: introduction
 title: Introduction
-summary: <p> So, you have a web server that accepts form requests. You want to validate and sanitize the data before your application can consume and store it inside the database. </p> <p> Say 👋 to Indicative! </p>
+summary: <p> So, you have a web server that accepts form requests. You want to validate and sanitize the data before your application can consume and store it in the database. </p> <p> Say 👋 to Indicative! </p>
 ---
 
 ## What is Indicative?
@@ -12,7 +12,7 @@ Indicative is a data validation library to validate complex data objects by defi
 1. Validate nested objects and arrays.
 2. Define custom validation error messages.
 3. Use error formatters to define the shape of error messages. For example: JSON:API formatter to format error messages as per the [JSON:API](https://jsonapi.org/format/#error-objects) spec.
-4. Option to remove invalidated properties from the data object.
+4. Option to remove unvalidated properties from the data object.
 5. Support for async validations.
 6. Extensible API for adding custom rules.
 7. Data sanitizer.
@@ -21,9 +21,10 @@ Indicative is a data validation library to validate complex data objects by defi
 Install the package from the npm registry as follows:
 
 ```shell
+# Using npm
 npm i indicative
 
-# yarn
+# Using yarn
 yarn add indicative
 ```
 
@@ -46,12 +47,12 @@ validate(data, rules)
   .catch(console.error)
 ```
 
-The `rules` object (known as schema) is defined as an object of key/value pairs. 
+The `rules` object (known as schema) is defined as an object of key-value pairs. 
 
 - The `key` is the field path you want to validate.
-- The `value` is an array of multiple validation rules. You can define them as a string separated by the `pipe (|)` operator or an array of functions calls.
+- The `value` is an array of multiple validation rules. You can define them as a string separated by `pipe (|)` operator or an array of functions calls.
 
-[Learn more about validator](validator-101)
+[Learn more about the Indicative validator](validator-101)
 
 ## Defining custom messages
 Indicative has first class support for defining custom messages for validation failures. You can define generic messages for **validation rules** or define a custom message for **each field**.
@@ -79,24 +80,24 @@ validate(data, rules, messages)
   .catch(console.error)
 ```
 
-The messages object has same syntax as the rules objects.
+The messages object has the same syntax as the rules objects.
 
 1. You can define messages just for the **rules**, ie: `required`, `min`, `email` and so on.
-2. Or define them in combination of **field + rule**, ie `username.required`. The later one get's priority over the former.
+2. Or define them in combination of **field + rule**, ie `username.required`. The latter one gets priority over the former.
 
 [Learn more about custom messages](custom-messages)
 
 ## Data sanitization
-Validating data is one step to ensure data integrity. Data sanitization is equally important, as you don't want to save malicious input to the database.
+Validating data is one step to ensure data integrity. Data sanitization is equally important since you don't want to save malicious input to the database.
 
-Re-using the **schema definition**, Indicative also allows you to define rules for cleaning up the user input.
+Similar to the **validator schema definition**, Indicative also allows you to define rules for cleaning up the user input.
 
 ```ts
 import { sanitize } from 'indicative/sanitizer'
 
 const rules = {
   username: 'trim',
-  email: 'normalizeEmail',
+  email: 'normalize_email',
 }
 
 const data = {
