@@ -2,6 +2,12 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-62429600-2'
+      }
+    ],
+    [
       '@nuxtjs/router',
       {
         keepDefaultRouter: true,
