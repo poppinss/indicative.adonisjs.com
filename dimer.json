@@ -9,13 +9,13 @@
     "validations": {
       "name": "Validation rules",
       "versions": {
-        "master": "indicative-rules/docs/validations"
+        "master": "docs/validations"
       }
     },
     "sanitizations": {
       "name": "Sanitization rules",
       "versions": {
-        "master": "indicative-rules/docs/sanitizations"
+        "master": "docs/sanitizations"
       }
     }
   },
