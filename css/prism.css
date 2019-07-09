@@ -82,7 +82,7 @@ code[class*="language-"] ::selection {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #525252;
+  color: #a2a1a1;
 }
 
 .token.namespace {

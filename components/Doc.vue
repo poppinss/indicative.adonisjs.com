@@ -9,7 +9,7 @@
     <footer class="doc-footer">
       <p>
         Caught a mistake or want to contribute to the documentation?
-        <a :href="doc.gh_link" target="_blank">Edit this page on GitHub!</a>
+        <a :href="doc.gh_link" target="_blank" rel="noopener">Edit this page on GitHub!</a>
       </p>
     </footer>
   </div>

@@ -2,14 +2,16 @@
   <div class="docs-nav" :class="{ expanded }">
     <div class="docs-nav-container">
       <nav>
-        <ul v-for="node in tree" :key="node.category">
+        <div v-for="node in tree" :key="node.category">
           <h4> {{ node.category }} </h4>
-          <li v-for="doc in node.docs" :key="doc.permalink">
-            <nuxt-link :to="doc.permalink">
-              {{ doc.title }}
-            </nuxt-link>
-          </li>
-        </ul>
+          <ul>
+            <li v-for="doc in node.docs" :key="doc.permalink">
+              <nuxt-link :to="doc.permalink">
+                {{ doc.title }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>
