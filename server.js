@@ -23,4 +23,4 @@ router.use((req, res, next) => {
   nuxt.render(req, res)
 })
 
-createServer().listen(3000)
+createServer().listen(process.env.PORT)
