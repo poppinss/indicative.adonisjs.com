@@ -13,7 +13,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@dimerapp/cli": "^1.0.12",
-    "concurrently": "^4.1.1"
+    "concurrently": "^4.1.1",
+    "husky": "^3.0.0"
   },
   "dependencies": {
     "@dimerapp/http-server": "^2.0.3",
@@ -24,5 +25,10 @@
     "nuxt": "^2.8.1",
     "nuxt-env": "^0.1.0",
     "vue-client-only": "^2.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cp -a indicative-rules/docs/* docs && git add docs"
+    }
   }
 }
