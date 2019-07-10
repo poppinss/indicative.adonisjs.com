@@ -81,7 +81,7 @@
       transform: none;
       right: auto;
       border-left: 1px solid rgba(0, 0, 0, .02);
-      top: calc(var(--header-height));
+      top: calc(var(--header-height) + 40px);
     }
 
     .docs-nav-container nav {
