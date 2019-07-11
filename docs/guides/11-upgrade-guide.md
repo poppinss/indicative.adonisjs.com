@@ -24,12 +24,12 @@ We have scoped the `validator` and `sanitizer` API to subpaths and that introduc
 
 [codegroup]
 ```ts{}{Earlier}
-const { validate, configure, santize, validateAll } = require('indicative')
+const { validate, configure, sanitize, validateAll } = require('indicative')
 ```
 
 ```ts{}{Now}
 const { validate, configure, validateAll } = require('indicative/validator')
-const { santize } = require('indicative/sanitizer')
+const { sanitize } = require('indicative/sanitizer')
 ```
 [/codegroup]
 
