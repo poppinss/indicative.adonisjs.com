@@ -8,7 +8,7 @@ gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validation
 Enforces the field value to be a valid string.
  
 [note]
-  The values transfered over HTTP are alawys string, which means this
+  The values transferred over HTTP are always string, which means this
   validation will always pass.
  
   However, this validation rule is helpful for raw JSON requests, since
